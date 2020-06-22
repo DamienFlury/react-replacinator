@@ -1,7 +1,12 @@
 import React from "react";
+import TagBar from "./TagBar";
 
 const ReactReplacinator: React.FC = () => {
-  return null;
+  return (
+    <>
+      <TagBar />
+    </>
+  );
 };
 
 export default ReactReplacinator;
