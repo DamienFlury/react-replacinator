@@ -1,10 +1,28 @@
 import React from "react";
-import TagBar from "./TagBar";
+import TagBar, { Tag } from "./TagBar";
+
+const tags: Tag[] = [
+  {
+    name: "First Name",
+    backgroundColor: "#23aaff",
+    color: "#ffffff",
+  },
+  {
+    name: "Last Name",
+    backgroundColor: "#ff55aa",
+    color: "#ffffff",
+  },
+];
 
 const ReactReplacinator: React.FC = () => {
   return (
     <>
-      <TagBar />
+      <TagBar
+        tags={tags}
+        onSelect={(tag) => {
+          console.log(tag.name);
+        }}
+      />
     </>
   );
 };
