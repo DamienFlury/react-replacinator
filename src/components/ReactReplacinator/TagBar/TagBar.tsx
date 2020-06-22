@@ -1,11 +1,6 @@
 import React from "react";
 import "./TagBar.css";
-
-export type Tag = {
-  backgroundColor: string;
-  color?: string;
-  name: string;
-};
+import { Tag } from "./types";
 
 type Props = {
   tags: Tag[];

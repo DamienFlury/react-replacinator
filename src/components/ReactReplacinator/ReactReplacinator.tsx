@@ -1,5 +1,6 @@
 import React from "react";
-import TagBar, { Tag } from "./TagBar";
+import TagBar from "./TagBar";
+import { Tag } from "./TagBar/types";
 
 const tags: Tag[] = [
   {
