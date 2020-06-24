@@ -5,10 +5,3 @@
   pointer-events: none;
   cursor: pointer;
 }
-
-.TemplateEditor-editable {
-  border: 1px solid #595959;
-  min-height: 500px;
-  border-radius: 4px;
-  padding: 10px;
-}

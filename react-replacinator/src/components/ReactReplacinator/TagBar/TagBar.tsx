@@ -9,7 +9,7 @@ type Props = {
 
 const TagBar: React.FC<Props> = ({ tags, onSelect }) => {
   return (
-    <div className="ReactReplacinator-tag">
+    <div className="tagbar-wrapper">
       {tags.map((tag) => (
         <button
           onMouseDown={(e) => {
@@ -17,7 +17,7 @@ const TagBar: React.FC<Props> = ({ tags, onSelect }) => {
             onSelect(tag);
           }}
           type="button"
-          className="tagbar-tag"
+          className="ReactReplacinator-tag"
           key={tag.name}
           style={{
             backgroundColor: tag.backgroundColor,

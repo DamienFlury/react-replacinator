@@ -36,7 +36,7 @@ const ReactReplacinator: React.FC<Props> = ({ tags }) => {
   };
 
   return (
-    <>
+    <div className="ReactReplacinator">
       <TagBar
         tags={tags}
         onSelect={(tag) => {
@@ -45,7 +45,7 @@ const ReactReplacinator: React.FC<Props> = ({ tags }) => {
       />
       <TemplateEditor value={value} setValue={setValue} editor={editor} />
       <TemplatePreview nodes={value} />
-    </>
+    </div>
   );
 };
 

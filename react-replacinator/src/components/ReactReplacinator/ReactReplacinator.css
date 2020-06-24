@@ -1,7 +1,19 @@
+.ReactReplacinator {
+  line-height: 1.8;
+}
+
 .ReactReplacinator-tag {
-  padding: 5px 10px;
-  margin-right: 10px;
+  padding: 0 10px;
+  display: inline-block;
   border-radius: 1rem;
   border: none;
   color: #ffffff;
+}
+
+.ReactReplacinator-template-editor {
+  border: 1px solid #595959;
+  min-height: 500px;
+  border-radius: 4px;
+  line-height: 1.8;
+  padding: 10px;
 }

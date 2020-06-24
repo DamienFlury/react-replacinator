@@ -49,7 +49,7 @@ const TemplateEditor: React.FC<Props> = ({ value, setValue, editor }) => {
     <Slate editor={editor} value={value} onChange={setValue}>
       <Editable
         renderElement={renderElement}
-        className="TemplateEditor-editable"
+        className="ReactReplacinator-template-editor"
       />
     </Slate>
   );
