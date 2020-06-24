@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { Node } from "slate";
 import TagBar from "./TagBar";
 import { Tag } from "./TagBar/types";
+import TemplateEditor from "./TemplateEditor";
 
 const tags: Tag[] = [
   {
@@ -16,6 +18,12 @@ const tags: Tag[] = [
 ];
 
 const ReactReplacinator: React.FC = () => {
+  const [value, setValue] = useState<Node[]>([
+    {
+      type: "paragraph",
+      children: [{ text: "This is a paragraph" }],
+    },
+  ]);
   return (
     <>
       <TagBar
@@ -24,6 +32,7 @@ const ReactReplacinator: React.FC = () => {
           console.log(tag.name);
         }}
       />
+      <TemplateEditor value={value} setValue={setValue} />
     </>
   );
 };
