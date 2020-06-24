@@ -21,6 +21,7 @@ const ReactReplacinator: React.FC<Props> = ({ tags }) => {
   const editor = useMemo(() => withReact(createEditor()), []);
 
   const insertPlaceholder = (tag: Tag) => {
+    editor.insertText("");
     editor.insertNode({
       type: "placeholder",
       children: [{ text: "" }],

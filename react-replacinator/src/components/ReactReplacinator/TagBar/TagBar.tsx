@@ -12,7 +12,10 @@ const TagBar: React.FC<Props> = ({ tags, onSelect }) => {
     <div className="ReactReplacinator-tag">
       {tags.map((tag) => (
         <button
-          onClick={() => onSelect(tag)}
+          onMouseDown={(e) => {
+            e.preventDefault();
+            onSelect(tag);
+          }}
           type="button"
           className="tagbar-tag"
           key={tag.name}
