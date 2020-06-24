@@ -1,11 +1,12 @@
 .tagbar-wrapper {
   display: flex;
   flex-wrap: wrap;
+  margin: 10px 0;
 }
 
 .tagbar-tag {
   padding: 5px 10px;
-  margin: 10px;
+  margin-right: 10px;
   border-radius: 1rem;
   border: none;
 }
