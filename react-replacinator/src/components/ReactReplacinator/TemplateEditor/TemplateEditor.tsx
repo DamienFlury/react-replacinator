@@ -1,7 +1,6 @@
 import React, { useCallback } from "react";
 import { Slate, Editable, RenderElementProps, ReactEditor } from "slate-react";
 import { Node, Editor } from "slate";
-import "./TemplateEditor.css";
 
 const DefaultElement: React.FC<RenderElementProps> = (props) => {
   return <div {...props.attributes}>{props.children}</div>;
