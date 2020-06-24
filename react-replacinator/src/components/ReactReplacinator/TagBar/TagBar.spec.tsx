@@ -44,7 +44,7 @@ describe("TagBar component", () => {
 
     const button = await result.findByText("first name");
 
-    fireEvent.click(button);
+    fireEvent.mouseDown(button);
 
     expect(handleSelect).toBeCalledTimes(1);
     expect(handleSelect).toBeCalledWith(tags[0]);
