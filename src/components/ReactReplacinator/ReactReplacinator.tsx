@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from "react";
 import { Node, createEditor } from "slate";
+import { withReact } from "slate-react";
 import TagBar from "./TagBar";
 import { Tag } from "./TagBar/types";
 import TemplateEditor from "./TemplateEditor";
-import { withReact } from "slate-react";
 
 type Props = {
   tags: Tag[];
