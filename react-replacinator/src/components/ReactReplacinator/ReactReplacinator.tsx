@@ -4,6 +4,7 @@ import { withReact } from "slate-react";
 import TagBar from "./TagBar";
 import { Tag } from "./TagBar/types";
 import TemplateEditor from "./TemplateEditor";
+import TemplatePreview from "./TemplatePreview";
 
 type Props = {
   tags: Tag[];
@@ -38,6 +39,7 @@ const ReactReplacinator: React.FC<Props> = ({ tags }) => {
         }}
       />
       <TemplateEditor value={value} setValue={setValue} editor={editor} />
+      <TemplatePreview nodes={value} />
     </>
   );
 };
