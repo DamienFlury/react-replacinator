@@ -4,7 +4,7 @@ import { Node, Editor } from "slate";
 import "./TemplateEditor.css";
 
 const DefaultElement: React.FC<RenderElementProps> = (props) => {
-  return <span {...props.attributes}>{props.children}</span>;
+  return <div {...props.attributes}>{props.children}</div>;
 };
 
 const PlaceholderElement: React.FC<RenderElementProps> = (props) => {
