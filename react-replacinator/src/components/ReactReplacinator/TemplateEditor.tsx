@@ -17,6 +17,7 @@ const PlaceholderElement: React.FC<RenderElementProps> = (props) => {
       }}
       {...props.attributes}
     >
+      {props.children}
       {(props.element.data as any).text}
     </span>
   );
