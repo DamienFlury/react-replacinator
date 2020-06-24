@@ -9,18 +9,13 @@ const DefaultElement: React.FC<RenderElementProps> = (props) => {
 
 const PlaceholderElement: React.FC<RenderElementProps> = (props) => {
   return (
-    <button
-      type="button"
-      contentEditable={false}
+    <span
       className="TemplateEditor-placeholder"
-      onClick={(e) => {
-        e.preventDefault();
-      }}
       style={{ backgroundColor: (props.element.data as any).color }}
       {...props.attributes}
     >
       {(props.element.data as any).text}
-    </button>
+    </span>
   );
 };
 
