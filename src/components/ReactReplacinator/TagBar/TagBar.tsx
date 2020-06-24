@@ -18,7 +18,7 @@ const TagBar: React.FC<Props> = ({ tags, onSelect }) => {
           key={tag.name}
           style={{
             backgroundColor: tag.backgroundColor,
-            color: tag.color,
+            color: tag.color ?? "#ffffff",
           }}
         >
           {tag.name}
