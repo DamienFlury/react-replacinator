@@ -5,6 +5,7 @@ import TagBar from "./TagBar";
 import { Tag } from "./TagBar/types";
 import TemplateEditor from "./TemplateEditor";
 import TemplatePreview from "./TemplatePreview";
+import "./ReactReplacinator.css";
 
 type Props = {
   tags: Tag[];
@@ -25,7 +26,11 @@ const ReactReplacinator: React.FC<Props> = ({ tags }) => {
     editor.insertNode({
       type: "placeholder",
       children: [{ text: "" }],
-      data: { color: tag.backgroundColor, text: tag.name },
+      data: {
+        backgroundColor: tag.backgroundColor,
+        color: tag.color,
+        text: tag.name,
+      },
     });
     editor.insertText("");
   };

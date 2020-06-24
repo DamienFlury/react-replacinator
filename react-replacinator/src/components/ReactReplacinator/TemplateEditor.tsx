@@ -10,8 +10,11 @@ const DefaultElement: React.FC<RenderElementProps> = (props) => {
 const PlaceholderElement: React.FC<RenderElementProps> = (props) => {
   return (
     <span
-      className="TemplateEditor-placeholder"
-      style={{ backgroundColor: (props.element.data as any).color }}
+      className="ReactReplacinator-tag"
+      style={{
+        backgroundColor: (props.element.data as any).backgroundColor,
+        color: (props.element.data as any).color,
+      }}
       {...props.attributes}
     >
       {(props.element.data as any).text}
