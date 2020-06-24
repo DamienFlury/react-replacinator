@@ -1,28 +1,19 @@
 import React, { useState, useMemo } from "react";
 import { Node, createEditor } from "slate";
+import { withReact } from "slate-react";
 import TagBar from "./TagBar";
 import { Tag } from "./TagBar/types";
 import TemplateEditor from "./TemplateEditor";
-import { withReact } from "slate-react";
 
-const tags: Tag[] = [
-  {
-    name: "First Name",
-    backgroundColor: "#23aaff",
-    color: "#ffffff",
-  },
-  {
-    name: "Last Name",
-    backgroundColor: "#ff55aa",
-    color: "#ffffff",
-  },
-];
+type Props = {
+  tags: Tag[];
+};
 
-const ReactReplacinator: React.FC = () => {
+const ReactReplacinator: React.FC<Props> = ({ tags }) => {
   const [value, setValue] = useState<Node[]>([
     {
       type: "paragraph",
-      children: [{ text: "This is a paragraph" }],
+      children: [{ text: "" }],
     },
   ]);
 

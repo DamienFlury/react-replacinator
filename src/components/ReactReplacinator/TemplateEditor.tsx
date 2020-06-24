@@ -31,10 +31,12 @@ type Props = {
 };
 
 const TemplateEditor: React.FC<Props> = ({ value, setValue, editor }) => {
+  /* eslint-disable no-param-reassign */
   editor.isInline = (element) => {
     return element.type === "placeholder";
   };
   editor.isVoid = (element) => element.type === "placeholder";
+  /* eslint-enable no-param-reassign */
 
   const renderElement = useCallback((props: any) => {
     switch (props.element.type) {
