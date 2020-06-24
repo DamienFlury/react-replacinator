@@ -32,7 +32,7 @@ const ReactReplacinator: React.FC<Props> = ({ tags }) => {
         text: tag.name,
       },
     });
-    editor.insertText(" ");
+    editor.insertText("");
   };
 
   return (
