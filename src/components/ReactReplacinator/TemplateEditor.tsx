@@ -12,7 +12,7 @@ const PlaceholderElement: React.FC<RenderElementProps> = (props) => {
     <button
       type="button"
       contentEditable={false}
-      className="MyEditor-placeholder"
+      className="TemplateEditor-placeholder"
       onClick={(e) => {
         e.preventDefault();
       }}
@@ -48,7 +48,10 @@ const TemplateEditor: React.FC<Props> = ({ value, setValue, editor }) => {
   }, []);
   return (
     <Slate editor={editor} value={value} onChange={setValue}>
-      <Editable renderElement={renderElement} />
+      <Editable
+        renderElement={renderElement}
+        className="TemplateEditor-editable"
+      />
     </Slate>
   );
 };

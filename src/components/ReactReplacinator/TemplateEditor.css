@@ -1,7 +1,14 @@
-.MyEditor-placeholder {
+.TemplateEditor-placeholder {
   border-radius: 9999px;
   padding: 5px 10px;
   display: inline-block;
   pointer-events: none;
   cursor: pointer;
+}
+
+.TemplateEditor-editable {
+  border: 1px solid #595959;
+  min-height: 500px;
+  border-radius: 4px;
+  padding: 10px;
 }
