@@ -1,5 +1,6 @@
-.ReactReplacinator {
+.ReactReplacinator * {
   line-height: 1.8;
+  font-size: 1rem;
 }
 
 .ReactReplacinator-tag {
@@ -10,10 +11,19 @@
   color: #ffffff;
 }
 
+.ReactReplacinator-tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.ReactReplacinator-tag-bar .ReactReplacinator-tag {
+  margin-right: 10px;
+}
+
 .ReactReplacinator-template-editor {
   border: 1px solid #595959;
   min-height: 500px;
   border-radius: 4px;
-  line-height: 1.8;
   padding: 10px;
 }

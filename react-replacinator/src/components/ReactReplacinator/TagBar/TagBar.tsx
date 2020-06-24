@@ -1,5 +1,4 @@
 import React from "react";
-import "./TagBar.css";
 import { Tag } from "./types";
 
 type Props = {
@@ -9,7 +8,7 @@ type Props = {
 
 const TagBar: React.FC<Props> = ({ tags, onSelect }) => {
   return (
-    <div className="tagbar-wrapper">
+    <div className="ReactReplacinator-tag-bar">
       {tags.map((tag) => (
         <button
           onMouseDown={(e) => {
