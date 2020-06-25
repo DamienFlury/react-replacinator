@@ -5,15 +5,15 @@ type Props = {
   nodes: Node[];
 };
 
-type ChildProps = {
+export type ChildProps = {
   data: {
     text: string;
   };
 };
 
 const TemplatePreview: React.FC<Props> = ({ nodes }) => {
-  const renderNodes = () => {
-    return nodes.map((node) => (
+  const renderNodes = () =>
+    nodes.map((node) => (
       <>
         {(node.children as (Node & ChildProps)[]).map((child) => {
           if (child.type === "placeholder") {
@@ -28,7 +28,6 @@ const TemplatePreview: React.FC<Props> = ({ nodes }) => {
         <br />
       </>
     ));
-  };
   return <div style={{ whiteSpace: "pre-wrap" }}>{renderNodes()}</div>;
 };
 

@@ -1,6 +1,6 @@
 import { Node } from "slate";
 
-export type TextNode = {
+type TextNode = {
   text: string;
 };
 
