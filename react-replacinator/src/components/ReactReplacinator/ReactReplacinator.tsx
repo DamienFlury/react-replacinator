@@ -89,7 +89,7 @@ const ReactReplacinator: React.FC<Props> = ({ tags, paragraphs, onChange }) => {
         text: tag.name,
       },
     });
-    editor.insertText(" ");
+    editor.insertText("");
   };
 
   return (
