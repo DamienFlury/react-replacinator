@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactReplacinator from "./components/ReactReplacinator";
 import { Tag } from "./components/ReactReplacinator/TagBar/types";
+import { Paragraph } from "./components/ReactReplacinator/ReactReplacinator";
 
 const tags: Tag[] = [
   {
@@ -24,7 +25,15 @@ const tags: Tag[] = [
 ];
 
 function App() {
-  return <ReactReplacinator tags={tags} />;
+  const [value, setValue] = useState<Paragraph[]>([
+    {
+      type: "paragraph",
+      children: [{ type: "inner-text", content: "" }],
+    },
+  ]);
+  return (
+    <ReactReplacinator tags={tags} paragraphs={value} onChange={setValue} />
+  );
 }
 
 export default App;

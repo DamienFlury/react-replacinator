@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { Slate, Editable, RenderElementProps, ReactEditor } from "slate-react";
 import { Node, Editor } from "slate";
+import { CustomNode } from "../CustomNode";
 
 const DefaultElement: React.FC<RenderElementProps> = (props) => {
   return <div {...props.attributes}>{props.children}</div>;
@@ -23,12 +24,12 @@ const PlaceholderElement: React.FC<RenderElementProps> = (props) => {
 };
 
 type Props = {
-  value: Node[];
-  setValue: React.Dispatch<React.SetStateAction<Node[]>>;
+  value: CustomNode[];
+  onChange: (value: Node[]) => void;
   editor: Editor & ReactEditor;
 };
 
-const TemplateEditor: React.FC<Props> = ({ value, setValue, editor }) => {
+const TemplateEditor: React.FC<Props> = ({ value, onChange, editor }) => {
   /* eslint-disable no-param-reassign */
   editor.isInline = (element) => {
     return element.type === "placeholder";
@@ -45,7 +46,7 @@ const TemplateEditor: React.FC<Props> = ({ value, setValue, editor }) => {
     }
   }, []);
   return (
-    <Slate editor={editor} value={value} onChange={setValue}>
+    <Slate editor={editor} value={value} onChange={onChange}>
       <Editable
         renderElement={renderElement}
         className="ReactReplacinator-template-editor"
