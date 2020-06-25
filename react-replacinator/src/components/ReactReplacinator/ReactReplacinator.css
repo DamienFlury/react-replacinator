@@ -17,7 +17,7 @@
   margin: 10px 0;
 }
 
-.ReactReplacinator-tag-bar .ReactReplacinator-tag {
+.ReactReplacinator-tag-bar .ReactReplacinator-tag:not(:last-child) {
   margin-right: 10px;
 }
 
