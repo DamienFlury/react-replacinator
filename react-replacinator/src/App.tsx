@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import ReactReplacinator from "./components/ReactReplacinator";
 import { Tag } from "./components/ReactReplacinator/TagBar/types";
-import { Paragraph } from "./components/ReactReplacinator/ReactReplacinator";
+import ReactReplacinator, {
+  Paragraph,
+} from "./components/ReactReplacinator/ReactReplacinator";
+import TagBar from "./components/ReactReplacinator/TagBar";
+import TemplateEditor from "./components/ReactReplacinator/TemplateEditor";
+import TemplatePreview from "./components/ReactReplacinator/TemplatePreview";
 
 const tags: Tag[] = [
   {
     name: "First Name",
     backgroundColor: "#23aaff",
-    color: "#ffffff",
   },
   {
     name: "Last Name",
     backgroundColor: "#ff55aa",
-    color: "#ffffff",
   },
   {
     name: "E-Mail",
@@ -32,7 +34,11 @@ function App() {
     },
   ]);
   return (
-    <ReactReplacinator tags={tags} paragraphs={value} onChange={setValue} />
+    <ReactReplacinator onChange={setValue} paragraphs={value} tags={tags}>
+      <TagBar />
+      <TemplateEditor />
+      <TemplatePreview />
+    </ReactReplacinator>
   );
 }
 

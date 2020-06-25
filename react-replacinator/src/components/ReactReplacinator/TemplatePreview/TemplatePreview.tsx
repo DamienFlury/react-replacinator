@@ -1,9 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Node } from "slate";
-
-type Props = {
-  nodes: Node[];
-};
+import { ReactReplacinatorContext } from "../ReactReplacinator";
 
 export type ChildProps = {
   data: {
@@ -11,8 +8,10 @@ export type ChildProps = {
   };
 };
 
-const TemplatePreview: React.FC<Props> = ({ nodes }) => {
-  const preview = nodes.map((node, index) => (
+const TemplatePreview: React.FC = () => {
+  const { editorState } = useContext(ReactReplacinatorContext);
+
+  const preview = editorState.map((node, index) => (
     // eslint-disable-next-line react/no-array-index-key
     <React.Fragment key={index}>
       {(node.children as (Node & ChildProps)[]).map((child, childIndex) => {
