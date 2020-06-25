@@ -1,7 +1,9 @@
 import React from "react";
-import { mapParagraphsToSlateState } from "./ReactReplacinator";
+import {
+  mapParagraphsToSlateState,
+  mapSlateStateToParagraphs,
+} from "./ReactReplacinator";
 import { Paragraph, CustomNode } from "../../types";
-import { Node } from "slate";
 
 describe("ReactReplacinator", () => {
   it("should map paragraphs to slate state", () => {
@@ -34,6 +36,40 @@ describe("ReactReplacinator", () => {
     ];
 
     const result = mapParagraphsToSlateState(input);
+    expect(result).toMatchObject(expected);
+  });
+});
+
+describe("ReactReplacinator", () => {
+  it("should map slate state to paragraphs", () => {
+    const input: CustomNode[] = [
+      {
+        type: "paragraph",
+        children: [
+          { text: "test" },
+          {
+            type: "placeholder",
+            children: [{ text: "" }],
+            data: {
+              text: "test",
+            },
+          },
+          { text: "" },
+        ],
+      },
+    ];
+
+    const expected: Paragraph[] = [
+      {
+        type: "paragraph",
+        children: [
+          { type: "inner-text", content: "test" },
+          { type: "placeholder", name: "test" },
+          { type: "inner-text", content: "" },
+        ],
+      },
+    ];
+    const result = mapSlateStateToParagraphs(input);
     expect(result).toMatchObject(expected);
   });
 });
