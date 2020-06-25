@@ -1,12 +1,6 @@
 import React, { useContext } from "react";
-import { Node } from "slate";
 import { ReactReplacinatorContext } from "../ReactReplacinator";
-
-export type ChildProps = {
-  data: {
-    text: string;
-  };
-};
+import { CustomNode } from "../CustomNode";
 
 const TemplatePreview: React.FC = () => {
   const { editorState } = useContext(ReactReplacinatorContext);
@@ -14,7 +8,7 @@ const TemplatePreview: React.FC = () => {
   const preview = editorState.map((node, index) => (
     // eslint-disable-next-line react/no-array-index-key
     <React.Fragment key={index}>
-      {(node.children as (Node & ChildProps)[]).map((child, childIndex) => {
+      {(node.children as CustomNode[]).map((child, childIndex) => {
         if (child.type === "placeholder") {
           return (
             <span
