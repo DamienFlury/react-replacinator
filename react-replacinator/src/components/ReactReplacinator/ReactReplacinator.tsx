@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback, createContext } from "react";
+import React, { useMemo, useCallback } from "react";
 import { createEditor, Editor, Node } from "slate";
 import { withReact, ReactEditor } from "slate-react";
 import { Tag } from "./TagBar/types";
