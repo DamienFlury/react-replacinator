@@ -1,7 +1,8 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useContext } from "react";
 import { Slate, Editable, RenderElementProps, ReactEditor } from "slate-react";
 import { Node, Editor } from "slate";
 import { CustomNode } from "../CustomNode";
+import { ReactReplacinatorContext } from "../ReactReplacinator";
 
 const DefaultElement: React.FC<RenderElementProps> = (props) => {
   return <div {...props.attributes}>{props.children}</div>;
@@ -23,13 +24,11 @@ const PlaceholderElement: React.FC<RenderElementProps> = (props) => {
   );
 };
 
-type Props = {
-  value: CustomNode[];
-  onChange: (value: Node[]) => void;
-  editor: Editor & ReactEditor;
-};
+const TemplateEditor: React.FC = () => {
+  const { editor, editorState, handleChange } = useContext(
+    ReactReplacinatorContext
+  );
 
-const TemplateEditor: React.FC<Props> = ({ value, onChange, editor }) => {
   /* eslint-disable no-param-reassign */
   editor.isInline = (element) => {
     return element.type === "placeholder";
@@ -46,7 +45,7 @@ const TemplateEditor: React.FC<Props> = ({ value, onChange, editor }) => {
     }
   }, []);
   return (
-    <Slate editor={editor} value={value} onChange={onChange}>
+    <Slate editor={editor} value={editorState} onChange={handleChange}>
       <Editable
         renderElement={renderElement}
         className="ReactReplacinator-template-editor"

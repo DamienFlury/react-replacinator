@@ -1,10 +1,7 @@
-import React, { useMemo, useCallback } from "react";
-import { createEditor } from "slate";
-import { withReact } from "slate-react";
-import TagBar from "./TagBar";
+import React, { useMemo, useCallback, createContext } from "react";
+import { createEditor, Editor, Node } from "slate";
+import { withReact, ReactEditor } from "slate-react";
 import { Tag } from "./TagBar/types";
-import TemplateEditor from "./TemplateEditor";
-import TemplatePreview from "./TemplatePreview";
 import "./ReactReplacinator.css";
 import { CustomNode } from "./CustomNode";
 
@@ -23,12 +20,6 @@ type InnerText = {
 export type Paragraph = {
   type: "paragraph";
   children: (InnerText | Placeholder)[];
-};
-
-type Props = {
-  tags: Tag[];
-  paragraphs: Paragraph[];
-  onChange: React.Dispatch<React.SetStateAction<Paragraph[]>>;
 };
 
 const mapParagraphsToSlateState = (paragraphs: Paragraph[]): CustomNode[] =>
@@ -66,7 +57,33 @@ const mapSlateStateToParagraphs = (nodes: CustomNode[]): Paragraph[] =>
     }),
   }));
 
-const ReactReplacinator: React.FC<Props> = ({ tags, paragraphs, onChange }) => {
+type State = {
+  editor: Editor & ReactEditor;
+  editorState: CustomNode[];
+  tags: Tag[];
+  handleChange: (value: Node[]) => void;
+  insertPlaceholder: (tag: Tag) => void;
+};
+
+export const ReactReplacinatorContext = React.createContext<State>({
+  editor: withReact(createEditor()),
+  editorState: [],
+  tags: [],
+  handleChange: () => {},
+  insertPlaceholder: () => {},
+});
+
+type Props = {
+  tags: Tag[];
+  paragraphs: Paragraph[];
+  onChange: React.Dispatch<React.SetStateAction<Paragraph[]>>;
+};
+const ReactReplacinator: React.FC<Props> = ({
+  children,
+  paragraphs,
+  tags,
+  onChange,
+}) => {
   const editor = useMemo(() => withReact(createEditor()), []);
 
   const editorState = useMemo(() => mapParagraphsToSlateState(paragraphs), [
@@ -92,21 +109,18 @@ const ReactReplacinator: React.FC<Props> = ({ tags, paragraphs, onChange }) => {
     editor.insertText("");
   };
 
+  const state: State = {
+    editor,
+    editorState,
+    tags,
+    handleChange,
+    insertPlaceholder,
+  };
+
   return (
-    <div className="ReactReplacinator">
-      <TagBar
-        tags={tags}
-        onSelect={(tag) => {
-          insertPlaceholder(tag);
-        }}
-      />
-      <TemplateEditor
-        value={editorState}
-        onChange={handleChange}
-        editor={editor}
-      />
-      <TemplatePreview nodes={editorState} />
-    </div>
+    <ReactReplacinatorContext.Provider value={state}>
+      {children}
+    </ReactReplacinatorContext.Provider>
   );
 };
 

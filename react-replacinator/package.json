@@ -1,6 +1,10 @@
 {
   "name": "react-replacinator",
   "version": "0.1.0",
+  "author": {
+    "name": "Damien Flury & s Stampa",
+    "email": "aaron@stampa.ch"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

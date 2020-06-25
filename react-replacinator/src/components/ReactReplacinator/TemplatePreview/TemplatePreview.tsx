@@ -1,21 +1,14 @@
-import React from "react";
-import { Node } from "slate";
+import React, { useContext } from "react";
+import { ReactReplacinatorContext } from "../ReactReplacinator";
+import { CustomNode } from "../CustomNode";
 
-type Props = {
-  nodes: Node[];
-};
+const TemplatePreview: React.FC = () => {
+  const { editorState } = useContext(ReactReplacinatorContext);
 
-export type ChildProps = {
-  data: {
-    text: string;
-  };
-};
-
-const TemplatePreview: React.FC<Props> = ({ nodes }) => {
-  const preview = nodes.map((node, index) => (
+  const preview = editorState.map((node, index) => (
     // eslint-disable-next-line react/no-array-index-key
     <React.Fragment key={index}>
-      {(node.children as (Node & ChildProps)[]).map((child, childIndex) => {
+      {(node.children as CustomNode[]).map((child, childIndex) => {
         if (child.type === "placeholder") {
           return (
             <span

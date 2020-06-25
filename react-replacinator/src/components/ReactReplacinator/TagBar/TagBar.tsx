@@ -1,19 +1,16 @@
-import React from "react";
-import { Tag } from "./types";
+import React, { useContext } from "react";
+import { ReactReplacinatorContext } from "../ReactReplacinator";
 
-type Props = {
-  tags: Tag[];
-  onSelect: (tag: Tag) => void;
-};
+const TagBar: React.FC = () => {
+  const { tags, insertPlaceholder } = useContext(ReactReplacinatorContext);
 
-const TagBar: React.FC<Props> = ({ tags, onSelect }) => {
   return (
     <div className="ReactReplacinator-tag-bar">
       {tags.map((tag) => (
         <button
           onMouseDown={(e) => {
             e.preventDefault();
-            onSelect(tag);
+            insertPlaceholder(tag);
           }}
           type="button"
           className="ReactReplacinator-tag"
