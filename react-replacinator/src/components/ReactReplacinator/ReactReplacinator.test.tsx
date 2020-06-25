@@ -11,6 +11,7 @@ describe("ReactReplacinator", () => {
         children: [
           { type: "inner-text", content: "test" },
           { type: "placeholder", name: "test" },
+          { type: "inner-text", content: "" },
         ],
       },
     ];
@@ -19,10 +20,7 @@ describe("ReactReplacinator", () => {
       {
         type: "paragraph",
         children: [
-          {
-            type: "paragraph",
-            children: [{ text: "test" }],
-          },
+          { text: "test" },
           {
             type: "placeholder",
             children: [{ text: "" }],
@@ -30,6 +28,7 @@ describe("ReactReplacinator", () => {
               text: "test",
             },
           },
+          { text: "" },
         ],
       },
     ];
