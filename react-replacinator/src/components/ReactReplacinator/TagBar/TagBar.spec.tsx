@@ -20,7 +20,7 @@ describe("TagBar component", () => {
 
     const handleSelect = jest.fn();
 
-    const result = render(<TagBar onSelect={handleSelect} tags={tags} />);
+    const result = render(<TagBar />);
 
     const emailButton = await result.findByText("email");
     const lastNameButton = await result.findByText("last name");
@@ -40,7 +40,7 @@ describe("TagBar component", () => {
         color: "pink",
       },
     ];
-    const result = render(<TagBar onSelect={handleSelect} tags={tags} />);
+    const result = render(<TagBar />);
 
     const button = await result.findByText("first name");
 

@@ -5,7 +5,9 @@ import { Tag } from "./TagBar/types";
 import "./ReactReplacinator.css";
 import { Paragraph, CustomNode } from "../../types";
 
-const mapParagraphsToSlateState = (paragraphs: Paragraph[]): CustomNode[] =>
+export const mapParagraphsToSlateState = (
+  paragraphs: Paragraph[]
+): CustomNode[] =>
   paragraphs.map((paragraph) => ({
     type: "paragraph",
     children: paragraph.children.map((child) => {
@@ -21,7 +23,7 @@ const mapParagraphsToSlateState = (paragraphs: Paragraph[]): CustomNode[] =>
     }),
   }));
 
-const mapSlateStateToParagraphs = (nodes: CustomNode[]): Paragraph[] =>
+export const mapSlateStateToParagraphs = (nodes: CustomNode[]): Paragraph[] =>
   nodes.map((node) => ({
     type: "paragraph",
     children: (node.children as CustomNode[]).map((child) => {
