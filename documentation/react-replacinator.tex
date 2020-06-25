@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 \usepackage{graphicx}
+\usepackage{tabularx}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -74,8 +75,19 @@
   \subsubsection{Formatting}
   \begin{itemize}
     \item Einrückung: 2 Spaces
-    \item Singlequotes für strings
+    \item Doublequotes für strings
   \end{itemize}
   \subsubsection{Linting}
+  \begin{tabularx}{\textwidth}{|X|X|}
+    \hline
+    Nicht verwendete Variablen & Error \\
+    \hline
+    Kein Index als Key & Error \\
+    \hline
+    Keine Neuzuweisung von Parametern & Error \\
+    \hline
+  \end{tabularx}
+
+  \section{Leistungsfähigkeit}
 
 \end{document}
