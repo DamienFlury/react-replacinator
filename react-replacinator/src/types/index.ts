@@ -1,4 +1,4 @@
-import { Paragraph } from "./paragraph";
-import { CustomNode } from "./custom-nodes";
+import { Paragraph } from "./Paragraph";
+import { CustomNode } from "./CustomNode";
 
 export type { Paragraph, CustomNode };
