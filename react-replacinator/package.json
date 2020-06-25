@@ -19,7 +19,7 @@
     "react-scripts": "3.4.1",
     "slate": "^0.58.3",
     "slate-react": "^0.58.3",
-    "typescript": "~3.7.2"
+    "typescript": "~3.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

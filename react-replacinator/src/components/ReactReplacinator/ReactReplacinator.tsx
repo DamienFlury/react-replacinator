@@ -3,24 +3,7 @@ import { createEditor, Editor, Node } from "slate";
 import { withReact, ReactEditor } from "slate-react";
 import { Tag } from "./TagBar/types";
 import "./ReactReplacinator.css";
-import { CustomNode } from "./CustomNode";
-
-type Placeholder = {
-  type: "placeholder";
-  name: string;
-  backgroundColor?: string;
-  color?: string;
-};
-
-type InnerText = {
-  type: "inner-text";
-  content: string;
-};
-
-export type Paragraph = {
-  type: "paragraph";
-  children: (InnerText | Placeholder)[];
-};
+import { Paragraph, CustomNode } from "../../types";
 
 const mapParagraphsToSlateState = (paragraphs: Paragraph[]): CustomNode[] =>
   paragraphs.map((paragraph) => ({

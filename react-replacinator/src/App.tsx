@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Tag } from "./components/ReactReplacinator/TagBar/types";
-import { Paragraph } from "./components/ReactReplacinator/ReactReplacinator";
+import { Paragraph } from "./types";
 import {
   ReactReplacinator,
   TagBar,

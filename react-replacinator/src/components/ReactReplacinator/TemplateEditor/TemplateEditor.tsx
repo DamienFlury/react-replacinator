@@ -1,7 +1,5 @@
 import React, { useCallback, useContext } from "react";
-import { Slate, Editable, RenderElementProps, ReactEditor } from "slate-react";
-import { Node, Editor } from "slate";
-import { CustomNode } from "../CustomNode";
+import { Slate, Editable, RenderElementProps } from "slate-react";
 import { ReactReplacinatorContext } from "../ReactReplacinator";
 
 const DefaultElement: React.FC<RenderElementProps> = (props) => {

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ReactReplacinatorContext } from "../ReactReplacinator";
-import { CustomNode } from "../CustomNode";
+import { CustomNode } from "../../../types";
 
 const TemplatePreview: React.FC = () => {
   const { editorState } = useContext(ReactReplacinatorContext);
