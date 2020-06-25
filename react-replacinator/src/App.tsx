@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Tag } from "./components/ReactReplacinator/TagBar/types";
-import ReactReplacinator, {
-  Paragraph,
-} from "./components/ReactReplacinator/ReactReplacinator";
-import TagBar from "./components/ReactReplacinator/TagBar";
-import TemplateEditor from "./components/ReactReplacinator/TemplateEditor";
-import TemplatePreview from "./components/ReactReplacinator/TemplatePreview";
+import { Paragraph } from "./components/ReactReplacinator/ReactReplacinator";
+import {
+  ReactReplacinator,
+  TagBar,
+  TemplateEditor,
+  TemplatePreview,
+} from "./components/ReactReplacinator";
 
 const tags: Tag[] = [
   {

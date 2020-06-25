@@ -1,3 +1,7 @@
 import ReactReplacinator from "./ReactReplacinator";
 
-export default ReactReplacinator;
+import TagBar from "./TagBar";
+import TemplateEditor from "./TemplateEditor";
+import TemplatePreview from "./TemplatePreview";
+
+export { ReactReplacinator, TagBar, TemplateEditor, TemplatePreview };
