@@ -102,7 +102,7 @@ const ReactReplacinator: React.FC<Props> = ({
 
   return (
     <ReactReplacinatorContext.Provider value={state}>
-      {children}
+      <div className="ReactReplacinator">{children}</div>
     </ReactReplacinatorContext.Provider>
   );
 };
