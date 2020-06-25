@@ -18,13 +18,15 @@
 
 \begin{document}
   \maketitle
-  \abstract{Dies ist ein React Projekt, welches im
+  \begin{abstract}
+  Dies ist ein React-Projekt, welches im
   Rahmen des ÜK-Moduls \glqq{}Webtechnologien clientseitig anwenden\grqq{}
-  entstanden ist.}
+  entstanden ist. Das Projekt repräsentiert eine
+  minimale React Library, welche es ermöglicht,
+  ein Template mit Platzhalter zu verfassen.
+  \end{abstract}
   \tableofcontents
   \newpage
-  \section{Einleitung}
-  sdfokjsdfjks
   \section{Versionsverwaltung}
   Zur Versionsverwaltung haben wir Github verwendet.
   Darin haben wir mit GitHub Projects gearbeitet,
@@ -42,18 +44,29 @@
   \section{Idee}
   Die Idee für unser Projekt kam von unserem ÜK-Leiter, der uns mitteilte, 
   lange nach einem Komponenten dieser Art gesucht und noch nichts passendes 
-  dazugefunden hat. 
+  dazu gefunden habe. 
   Es handelt sich hierbei um eine wiederverwendbare Komponente, mit der man 
-  Emailvorlagen erstellen kann. Es soll möglich sein, vorgegebene Platzhalter 
-  via WYSIWYG in einen Emailtext mit einfachen Klicks einzubinden. 
+  Textvorlagen erstellen kann. Es soll möglich sein, vorgegebene Platzhalter 
+  via WYSIWYG in einen Text mit einfachen Klicks einzubinden. 
   Ausserdem soll es eine Preview des fertigen Mails geben.
   \subsection{Komponenten Diagramm}
+  Wir verwenden vier Komponenten, wobei eine lediglich
+  als Provider dient und somit nur State verwaltet,
+  aber die View nicht verändert. Ein Komponentendiagramm
+  finden Sie in Abbildung \ref{component-diagram}.
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/react-replacinator.png}
+    \caption{Komponentendiagramm}
+    \label{component-diagram}
+  \end{figure}
   \section{Anforderungsbeschreibung}
   \subsection{Emailtemplate erstellen}
   \subsection{Preview des Templates darstellen}
   \subsection{Clientschnittstelle zur Verfügung stellen}
   \subsection{}
   \section{Quellcode-Linting}
-  Für das Liniting des Quellcodes haben wir Eslint und Prettier verwendet.
-  Wir habe dabei die default konfiguration von Prettier verwendet.
+  Für das Linting des Quellcodes haben wir \emph{ESLint} verwendet.
+  Dieses Tool haben wir mit dem Code Formatter \emph{Prettier}
+  kombiniert, um Style Guides und Formatting konsistent
+  zu halten.
 \end{document}
